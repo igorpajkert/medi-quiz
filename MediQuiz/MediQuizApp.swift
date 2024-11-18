@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct MediQuizApp: App {
+    
+    @State private var categories: [QuestionsCategory] = QuestionsCategory.sampleData
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CategoriesView(categories: $categories)
         }
     }
 }
