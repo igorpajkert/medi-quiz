@@ -40,16 +40,16 @@ extension Question {
     
     static let sampleData: [Question] =
     [
-        .init(text: "What is the primary function of red blood cells?", answers: [.init(text: "Transport oxygen", isCorrect: true), .init(text: "Fight infections", isCorrect: false), .init(text: "Regulate body temperature", isCorrect: false)]),
-        .init(text: "What is the name of the largest bone in the human body?", answers: [.init(text: "Femur", isCorrect: true), .init(text: "Humerus", isCorrect: false), .init(text: "Tibia", isCorrect: false)]),
-        .init(text: "Which organ is primarily responsible for filtering blood?", answers: [.init(text: "Kidney", isCorrect: true), .init(text: "Liver", isCorrect: false), .init(text: "Heart", isCorrect: false)]),
-        .init(text: "What is the term for the process of cell division in humans?", answers: [.init(text: "Mitosis", isCorrect: true), .init(text: "Meiosis", isCorrect: false), .init(text: "Binary fission", isCorrect: false)]),
-        .init(text: "Which vitamin is essential for blood clotting?", answers: [.init(text: "Vitamin K", isCorrect: true), .init(text: "Vitamin D", isCorrect: false), .init(text: "Vitamin C", isCorrect: false)]),
-        .init(text: "What is the name of the condition characterized by high blood sugar levels?", answers: [.init(text: "Diabetes", isCorrect: true), .init(text: "Anemia", isCorrect: false), .init(text: "Hypertension", isCorrect: false)]),
-        .init(text: "What part of the brain controls balance and coordination?", answers: [.init(text: "Cerebellum", isCorrect: true), .init(text: "Cerebrum", isCorrect: false), .init(text: "Medulla oblongata", isCorrect: false)]),
-        .init(text: "Which type of blood vessel carries oxygenated blood away from the heart?", answers: [.init(text: "Arteries", isCorrect: true), .init(text: "Veins", isCorrect: false), .init(text: "Capillaries", isCorrect: false)]),
-        .init(text: "What is the term for inflammation of the joints?", answers: [.init(text: "Arthritis", isCorrect: true), .init(text: "Osteoporosis", isCorrect: false), .init(text: "Bursitis", isCorrect: false)]),
-        .init(text: "Which organ produces insulin?", answers: [.init(text: "Pancreas", isCorrect: true), .init(text: "Liver", isCorrect: false), .init(text: "Gallbladder", isCorrect: false)])
+        .init(text: "Which organ filters blood in the human body?", answers: [.init(text: "Liver", isCorrect: false), .init(text: "Kidneys", isCorrect: true), .init(text: "Lungs", isCorrect: false), .init(text: "Stomach", isCorrect: false)]),
+        .init(text: "What is the name of the hormone that regulates blood sugar levels?", answers: [.init(text: "Insulin", isCorrect: true), .init(text: "Adrenaline", isCorrect: false), .init(text: "Thyroxine", isCorrect: false), .init(text: "Glucagon", isCorrect: false)]),
+        .init(text: "What is the primary function of red blood cells?", answers: [.init(text: "Fight infections", isCorrect: false), .init(text: "Regulate hormones", isCorrect: false), .init(text: "Transport oxygen", isCorrect: true), .init(text: "Filter waste", isCorrect: false)]),
+        .init(text: "Which part of the brain is responsible for balance and coordination?", answers: [.init(text: "Cerebrum", isCorrect: false), .init(text: "Thalamus", isCorrect: false), .init(text: "Cerebellum", isCorrect: true), .init(text: "Medulla", isCorrect: false)]),
+        .init(text: "What is the largest organ in the human body?", answers: [.init(text: "Liver", isCorrect: false), .init(text: "Skin", isCorrect: true), .init(text: "Heart", isCorrect: false), .init(text: "Brain", isCorrect: false)]),
+        .init(text: "What type of blood vessel carries oxygenated blood away from the heart?", answers: [.init(text: "Capillaries", isCorrect: false), .init(text: "Veins", isCorrect: false), .init(text: "Lymph vessels", isCorrect: false), .init(text: "Arteries", isCorrect: true)]),
+        .init(text: "Which vitamin is essential for blood clotting?", answers: [.init(text: "Vitamin D", isCorrect: false), .init(text: "Vitamin K", isCorrect: true), .init(text: "Vitamin A", isCorrect: false), .init(text: "Vitamin C", isCorrect: false)]),
+        .init(text: "What is the normal pH range of human blood?", answers: [.init(text: "7.35-7.45", isCorrect: true), .init(text: "6.0-6.5", isCorrect: false), .init(text: "6.5-7.0", isCorrect: false), .init(text: "7.8-8.2", isCorrect: false)]),
+        .init(text: "What is the primary function of the pancreas?", answers: [.init(text: "Produce insulin", isCorrect: true), .init(text: "Regulate blood pressure", isCorrect: false), .init(text: "Filter toxins", isCorrect: false), .init(text: "Store bile", isCorrect: false)]),
+        .init(text: "Which type of cell is responsible for fighting infections in the body?", answers: [.init(text: "Nerve cells", isCorrect: false), .init(text: "Red blood cells", isCorrect: false), .init(text: "White blood cells", isCorrect: true), .init(text: "Platelets", isCorrect: false)])
     ]
     
     static func generateSampleData(of count: Int) -> [Question] {

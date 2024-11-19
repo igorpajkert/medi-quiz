@@ -34,7 +34,7 @@ struct QuizView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(lineWidth: 2)
-                                .aspectRatio(3 / 1, contentMode: .fit)
+                                .aspectRatio(CGFloat(category.questions[currentQuestion].answers.count), contentMode: .fit)
                                 .foregroundColor(answerColor(for: answer))
                             Text(answer.text)
                                 .font(.headline)
@@ -47,8 +47,7 @@ struct QuizView: View {
             Button("Next", action: nextQuestion)
                 .disabled(!isAnswered)
                 .padding()
-        }
-        .navigationTitle(category.title)
+        }        
         .padding()
     }
     

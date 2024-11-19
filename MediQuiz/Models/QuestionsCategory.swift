@@ -35,7 +35,7 @@ extension QuestionsCategory {
         QuestionsCategory(title: "Obesity", subtitle: "Understanding health and lifestyle.", isUnlocked: false, questions: Question.generateSampleData(of: 120)),
         QuestionsCategory(title: "Sexual Life", subtitle: "Empowering intimacy and wellness.", isUnlocked: false, questions: Question.generateSampleData(of: 100)),
         QuestionsCategory(title: "Mental Wellness", subtitle: "Understanding mental health and stress management.", isUnlocked: true, questions: Question.generateSampleData(of: 65)),
-        QuestionsCategory(title: "Anatomy Made Easy", subtitle: "Learn how the human body works step by step.", isUnlocked: false, questions: Question.generateSampleData(of: 130)),
+        QuestionsCategory(title: "Anatomy Made Easy", subtitle: "Learn how the human body works step by step.", isUnlocked: false, questions: Question.generateSampleData(of: 175)),
         QuestionsCategory(title: "Pharmacology Basics", subtitle: "Understand medicines and their effects.", isUnlocked: false, questions: Question.generateSampleData(of: 50))
     ]
 }
