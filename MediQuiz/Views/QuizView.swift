@@ -13,7 +13,7 @@ struct QuizView: View {
     
     @State private var currentQuestion: Int = 0
     @State private var isAnswered: Bool = false
-    @State private var selectedAnswer: UUID = UUID()
+    @State private var selectedAnswer: UUID? = nil
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -47,7 +47,7 @@ struct QuizView: View {
             Button("Next", action: nextQuestion)
                 .disabled(!isAnswered)
                 .padding()
-        }        
+        }
         .padding()
     }
     

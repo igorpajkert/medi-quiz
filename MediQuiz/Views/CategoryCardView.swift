@@ -28,12 +28,12 @@ struct CategoryCardView: View {
                 }
                 .font(.callout)
             }
-            .padding()
+            .padding()            
             NavigationLink(destination: CategoryDetailView(category: $category), label: {}).padding()
         }
     }
 }
 
-#Preview(traits: .fixedLayout(width: 400, height: 120)) {
+#Preview(traits: .fixedLayout(width: 400, height: 140)) {
     CategoryCardView(category: .constant(QuestionsCategory.sampleData[3]))
 }

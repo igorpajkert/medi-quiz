@@ -11,6 +11,8 @@ struct CategoryDetailView: View {
     
     @Binding var category: QuestionsCategory
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack(alignment: .center) {
             Label("\(category.questionsCount) questions", systemImage: "rectangle.stack")
@@ -30,7 +32,7 @@ struct CategoryDetailView: View {
                         Text("Start Quiz")
                             .font(.headline)
                     }
-                    .foregroundStyle(.main)
+                    .foregroundStyle(Color(colorScheme == .dark ? .white : .black))
                 }
             }
             .aspectRatio(1/2, contentMode: .fit)
@@ -43,5 +45,7 @@ struct CategoryDetailView: View {
 }
 
 #Preview {
-    CategoryDetailView(category: .constant(QuestionsCategory.sampleData[5]))
+    NavigationStack {
+        CategoryDetailView(category: .constant(QuestionsCategory.sampleData[5]))
+    }
 }

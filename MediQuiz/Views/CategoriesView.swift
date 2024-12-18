@@ -18,9 +18,9 @@ struct CategoriesView: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
                     .listItemTint(.main)
-                    .aspectRatio(2/1, contentMode: .fill)
+                    .aspectRatio(15/6, contentMode: .fill)
             }
-            .navigationTitle("Categories")
+            .navigationTitle("Categories")            
         }
     }
 }
