@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryCardView: View {
     
-    @Binding var category: QuestionsCategory
+    @Binding var category: Category
     
     var body: some View {
         ZStack {
@@ -35,5 +35,5 @@ struct CategoryCardView: View {
 }
 
 #Preview(traits: .fixedLayout(width: 400, height: 140)) {
-    CategoryCardView(category: .constant(QuestionsCategory.sampleData[3]))
+    CategoryCardView(category: .constant(Category.sampleData[3]))
 }

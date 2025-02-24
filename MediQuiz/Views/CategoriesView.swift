@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoriesView: View {
     
-    @Binding var categories: [QuestionsCategory]
+    @Binding var categories: [Category]
     
     var body: some View {
         NavigationStack {
@@ -26,5 +26,5 @@ struct CategoriesView: View {
 }
 
 #Preview {
-    CategoriesView(categories: .constant(QuestionsCategory.sampleData))
+    CategoriesView(categories: .constant(Category.sampleData))
 }

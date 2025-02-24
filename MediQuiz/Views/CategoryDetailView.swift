@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryDetailView: View {
     
-    @Binding var category: QuestionsCategory
+    @Binding var category: Category
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -46,6 +46,6 @@ struct CategoryDetailView: View {
 
 #Preview {
     NavigationStack {
-        CategoryDetailView(category: .constant(QuestionsCategory.sampleData[5]))
+        CategoryDetailView(category: .constant(Category.sampleData[5]))
     }
 }

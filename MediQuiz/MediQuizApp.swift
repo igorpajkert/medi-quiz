@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct MediQuizApp: App {
     
-    @State private var categories: [QuestionsCategory] = QuestionsCategory.sampleData
+    @State private var categories: [Category] = Category.sampleData
     
     var body: some Scene {
         WindowGroup {

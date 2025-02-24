@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizView: View {
     
-    @Binding var category: QuestionsCategory
+    @Binding var category: Category
     
     @State private var currentQuestion: Int = 0
     @State private var isAnswered: Bool = false
@@ -64,5 +64,5 @@ struct QuizView: View {
 }
 
 #Preview {
-    QuizView(category: .constant(QuestionsCategory.sampleData[0]))
+    QuizView(category: .constant(Category.sampleData[0]))
 }
