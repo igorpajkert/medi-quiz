@@ -13,17 +13,18 @@ struct QuizView: View {
     
     @State private var currentQuestion: Int = 0
     @State private var isAnswered: Bool = false
-    @State private var selectedAnswer: UUID? = nil
+    @State private var selectedAnswer: Int? = nil
     
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
+            let question = getCurrentQuestion()
             QuizHeaderView(
-                question: category.questions[currentQuestion],
+                text: question.text,
                 currentQuestion: currentQuestion,
-                totalQuestions: category.questionsCount)
-            ForEach(category.questions[currentQuestion].answers) { answer in
+                totalQuestions: category.questions.count)
+            ForEach(question.answers) { answer in
                 Button(
                     action: {
                         guard !isAnswered else { return }
@@ -34,7 +35,10 @@ struct QuizView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(lineWidth: 2)
-                                .aspectRatio(CGFloat(category.questions[currentQuestion].answers.count), contentMode: .fit)
+                                .aspectRatio(
+                                    CGFloat(question.answers.count),
+                                    contentMode: .fit
+                                )
                                 .foregroundColor(answerColor(for: answer))
                             Text(answer.text)
                                 .font(.headline)
@@ -51,7 +55,7 @@ struct QuizView: View {
         .padding()
     }
     
-    private func answerColor(for answer: Question.Answer) -> Color {
+    private func answerColor(for answer: Answer) -> Color {
         guard isAnswered else { return .main }
         guard selectedAnswer == answer.id else { return .main }
         return answer.isCorrect ? .green : .red
@@ -60,6 +64,12 @@ struct QuizView: View {
     private func nextQuestion() {
         currentQuestion += 1
         isAnswered = false
+    }
+    
+    private func getCurrentQuestion() -> Question {
+        Question.sampleData.first {
+            $0.id == category.questions[currentQuestion]
+        } ?? Question.sampleData[0]
     }
 }
 

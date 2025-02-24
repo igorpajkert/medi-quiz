@@ -15,7 +15,7 @@ struct CategoryDetailView: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            Label("\(category.questionsCount) questions", systemImage: "rectangle.stack")
+            Label("\(category.questions.count) questions", systemImage: "rectangle.stack")
                 .font(.headline)
                 .padding(.top)
             Divider()

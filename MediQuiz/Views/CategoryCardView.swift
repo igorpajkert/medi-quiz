@@ -22,9 +22,9 @@ struct CategoryCardView: View {
                     .font(.subheadline)
                 Spacer()
                 HStack {
-                    Label("\(category.questionsCount) questions", systemImage: "rectangle.stack")
+                    Label("\(category.questions.count) questions", systemImage: "rectangle.stack")
                     Spacer()
-                    if !category.isUnlocked { Label("Locked", systemImage: "lock").labelStyle(.trailingIcon) }
+                    if !category.isFree { Label("Locked", systemImage: "lock").labelStyle(.trailingIcon) }
                 }
                 .font(.callout)
             }

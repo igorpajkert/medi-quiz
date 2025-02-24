@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizHeaderView: View {
     
-    var question: Question
+    var text: String
     var currentQuestion: Int
     var totalQuestions: Int
     
@@ -30,7 +30,7 @@ struct QuizHeaderView: View {
             ProgressView(value: progress)
                 .tint(.main)
                 .progressViewStyle(.linear)
-            Text(question.text)
+            Text(text)
                 .font(.title)
                 .multilineTextAlignment(.center)
             Spacer()
@@ -40,5 +40,5 @@ struct QuizHeaderView: View {
 }
 
 #Preview {
-    QuizHeaderView(question: Question.sampleData[0], currentQuestion: 5, totalQuestions: 10)
+    QuizHeaderView(text: Question.sampleData[0].text, currentQuestion: 5, totalQuestions: 10)
 }
