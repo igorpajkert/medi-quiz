@@ -1,0 +1,54 @@
+name: Upload to TestFlight
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up keychain and install certificates
+        run: |
+          security create-keychain -p "" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "" build.keychain
+        
+          echo "${{ secrets.CERTIFICATE_BASE64 }}" | base64 --decode > certificate.p12
+          security import certificate.p12 -k build.keychain -P "${{ secrets.CERTIFICATE_PASSWORD }}" -T /usr/bin/codesign
+        
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
+
+      - name: Build Archive
+        run: |
+          xcodebuild clean archive \
+            -workspace MediQuiz.xcworkspace \
+            -scheme MediQuiz \
+            -configuration Release \
+            -archivePath ${{ github.workspace }}/build/MediQuiz.xcarchive \
+            CODE_SIGN_IDENTITY="iPhone Distribution: Igor Pajkert" \
+            PROVISIONING_PROFILE_SPECIFIER="iOS Team Provisioning Profile: *"
+
+      - name: Export IPA
+        run: |
+          xcodebuild -exportArchive \
+            -archivePath ${{ github.workspace }}/build/MediQuiz.xcarchive \
+            -exportOptionsPlist exportOptions.plist \
+            -exportPath ${{ github.workspace }}/build/ipa
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: MediQuiz-IPA
+            path: ${{ github.workspace }}/build/ipa/MediQuiz.ipa
+      
+      - name: Upload app to TestFlight
+        uses: henrik1/upload-testflight@v2
+        with: 
+          app-path: ${{ github.workspace }}/build/ipa/MediQuiz.ipa
+          issuer-id: ${{ secrets.ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
