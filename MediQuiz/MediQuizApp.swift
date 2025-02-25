@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct MediQuizApp: App {
     
     @State private var categories: [Category] = Category.sampleData
+    
+    init() {
+        FirebaseApp.configure()
+    }
     
     var body: some Scene {
         WindowGroup {
