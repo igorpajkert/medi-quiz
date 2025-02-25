@@ -40,7 +40,7 @@ jobs:
             -exportPath ${{ github.workspace }}/build/ipa
 
       - name: Upload IPA Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: MediQuiz-IPA
             path: ${{ github.workspace }}/build/ipa/MediQuiz.ipa
