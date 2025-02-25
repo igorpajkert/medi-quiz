@@ -25,6 +25,8 @@ jobs:
           .github/scripts/update_version.sh "${{ github.event.inputs.version }}" "${{ github.event.inputs.build }}"
 
       - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use built-in token
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions@users.noreply.github.com"
