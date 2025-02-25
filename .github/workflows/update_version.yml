@@ -1,0 +1,33 @@
+name: Update iOS Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Set the new version (e.g., 1.2.0). Leave empty to keep current."
+        required: false
+        default: ""
+      build:
+        description: "Set the new build number (e.g., 100). Leave empty to auto-increment."
+        required: false
+        default: ""
+
+jobs:
+  update-version:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Version Update Script
+        run: |
+          chmod +x .github/scripts/update_version.sh
+          .github/scripts/update_version.sh "${{ github.event.inputs.version }}" "${{ github.event.inputs.build }}"
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add .
+          git commit -m "Updated version to ${{ github.event.inputs.version }} and build to ${{ github.event.inputs.build }} [skip ci]" || echo "No changes to commit"
+          git push
