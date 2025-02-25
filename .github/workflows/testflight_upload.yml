@@ -26,25 +26,13 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
 
-      - name: Clean Build
-        run: |
-         xcodebuild clean \
-          -project MediQuiz.xcodeproj \
-          -scheme MediQuiz \
-          -configuration Release
-          -destination "generic/platform=iOS"
-          
-      - name: Build Archive
-        run: |
-          xcodebuild archive \
-            -downloadPlatform iOS
-            -project MediQuiz.xcodeproj \
-            -scheme MediQuiz \
-            -configuration Release \
-            -sdk iphoneos \
-            -archivePath ${{ github.workspace }}/build/MediQuiz.xcarchive \
-            CODE_SIGN_IDENTITY="iPhone Distribution: Igor Pajkert" \
-            PROVISIONING_PROFILE_SPECIFIER="iOS Team Provisioning Profile: *"
+      - name: Build
+        uses: sergeysova/xcodebuild-action@v2.1.0
+        with:
+            project: MyApp.xcodeproj
+            scheme: MyApp
+            destination: platform=macOS
+            action: test
 
       - name: Export IPA
         run: |
