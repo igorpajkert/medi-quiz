@@ -32,6 +32,7 @@ jobs:
             -project MediQuiz.xcodeproj \
             -scheme MediQuiz \
             -configuration Release \
+            -destination 'generic/platform=iOS' \
             -archivePath ${{ github.workspace }}/build/MediQuiz.xcarchive \
             CODE_SIGN_IDENTITY="iPhone Distribution: Igor Pajkert" \
             PROVISIONING_PROFILE_SPECIFIER="iOS Team Provisioning Profile: *"
