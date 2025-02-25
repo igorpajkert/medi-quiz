@@ -15,7 +15,12 @@ CURRENT_BUILD=$(grep -o 'CURRENT_PROJECT_VERSION = [0-9]*' "$PROJECT_FILE" | hea
 
 # Use input values or auto-increment build number
 NEW_VERSION=${1:-$CURRENT_VERSION}
-NEW_BUILD=${2:-$((CURRENT_BUILD + 1))}
+
+if [ $NEW_VERSION != $CURRENT_VERSION ]; then
+  NEW_BUILD = 1
+else 
+  NEW_BUILD=${2:-$((CURRENT_BUILD + 1))}
+fi
 
 # Update project.pbxproj
 sed -i '' "s/MARKETING_VERSION = $CURRENT_VERSION/MARKETING_VERSION = $NEW_VERSION/g" "$PROJECT_FILE"
