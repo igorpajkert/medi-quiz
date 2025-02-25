@@ -26,9 +26,17 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           echo "${{ secrets.PROVISIONING_PROFILE_BASE64 }}" | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/profile.mobileprovision
 
+      - name: Clean Build
+        run: |
+         xcodebuild clean \
+          -project MediQuiz.xcodeproj \
+          -scheme MediQuiz \
+          -configuration Release
+          
       - name: Build Archive
         run: |
-          xcodebuild clean archive \
+          xcodebuild archive \
+            -downloadPlatform iOS
             -project MediQuiz.xcodeproj \
             -scheme MediQuiz \
             -configuration Release \
