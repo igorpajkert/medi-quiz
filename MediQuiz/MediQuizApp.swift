@@ -13,6 +13,8 @@ struct MediQuizApp: App {
     
     @State private var categories: [Category] = Category.sampleData
     
+    
+    
     init() {
         FirebaseApp.configure()
     }
