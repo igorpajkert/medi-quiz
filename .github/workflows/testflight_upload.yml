@@ -25,7 +25,7 @@ jobs:
       - name: Build Archive
         run: |
           xcodebuild clean archive \
-            -workspace MediQuiz.xcworkspace \
+            -project MediQuiz.xcodeproj \
             -scheme MediQuiz \
             -configuration Release \
             -archivePath ${{ github.workspace }}/build/MediQuiz.xcarchive \
