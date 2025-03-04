@@ -12,11 +12,14 @@ extension Authentication {
     enum AuthError: Error, LocalizedError {
         
         case noUserFound
+        case authenticationRequired
         
         var errorDescription: String? {
             switch self {
             case .noUserFound:
                 return String(localized: "error.noUserFound")
+            case .authenticationRequired:
+                return String(localized: "error.authenticationRequired")
             }
         }
     }

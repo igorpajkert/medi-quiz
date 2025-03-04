@@ -1,0 +1,44 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "%lld questions" : {
+
+    },
+    "Categories" : {
+
+    },
+    "error.authenticationRequired" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Re-authentication is required to complete this operation."
+          }
+        }
+      }
+    },
+    "error.noUserFound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No currently signed-in user found."
+          }
+        }
+      }
+    },
+    "Locked" : {
+
+    },
+    "Next" : {
+
+    },
+    "Start Quiz" : {
+
+    }
+  },
+  "version" : "1.0"
+}
