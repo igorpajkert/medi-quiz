@@ -16,9 +16,22 @@
 		F0C26AC42CE910A200CD8BB0 /* MediQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F039FBC52D7728FD00D5C282 /* Exceptions for "MediQuiz" folder in "MediQuiz" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F0C26AC32CE910A200CD8BB0 /* MediQuiz */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F0C26AC62CE910A200CD8BB0 /* MediQuiz */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F039FBC52D7728FD00D5C282 /* Exceptions for "MediQuiz" folder in "MediQuiz" target */,
+			);
 			path = MediQuiz;
 			sourceTree = "<group>";
 		};
@@ -278,6 +291,7 @@
 				DEVELOPMENT_TEAM = E2BE72DZC6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MediQuiz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Medi Quiz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -310,6 +324,7 @@
 				DEVELOPMENT_TEAM = E2BE72DZC6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MediQuiz/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Medi Quiz";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
