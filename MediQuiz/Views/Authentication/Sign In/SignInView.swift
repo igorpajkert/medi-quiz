@@ -23,27 +23,42 @@ struct SignInView: View {
                 buttonSignUp
             }
             .padding()
+            .sheet(
+                isPresented: $model.isPresentingPasswordResetSheet,
+                onDismiss: model.onDismissPasswordReset
+            ) {
+                PasswordResetSheet()
+            }
+            .sheet(item: $model.errorWrapper) { wrapper in
+                ErrorSheet(wrapper: wrapper)
+            }
+            .navigationDestination(
+                isPresented: $model.isPresentingSignUpView
+            ) {
+                SignUpView()
+            }
         }
     }
     
-    var headline: some View {
+    private var headline: some View {
         Text("text.signIn")
             .font(.headline)
             .multilineTextAlignment(.center)
     }
     
-    var buttonPasswordReset: some View {
+    private var buttonPasswordReset: some View {
         ButtonTertiary(title: "button.passwordReset", action: model.onTapPasswordReset)
             .font(.callout)
             .padding(.bottom)
     }
     
-    var buttonSignIn: some View {
+    private var buttonSignIn: some View {
         ButtonPrimary(title: "button.signIn", action: model.onTapSignIn)
             .bold()
+            .disabled(model.isButtonSignInDisabled)
     }
     
-    var buttonSignUp: some View {
+    private var buttonSignUp: some View {
         ButtonSecondary(title: "button.signUp", action: model.onTapSignUp)
     }
 }
