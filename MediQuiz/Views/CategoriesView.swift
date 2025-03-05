@@ -17,7 +17,7 @@ struct CategoriesView: View {
                 CategoryCardView(category: $category)
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)
-                    .listItemTint(.main)
+                    .listItemTint(.accent)
                     .aspectRatio(15/6, contentMode: .fill)
             }
             .navigationTitle("Categories")            

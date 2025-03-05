@@ -56,8 +56,8 @@ struct QuizView: View {
     }
     
     private func answerColor(for answer: Answer) -> Color {
-        guard isAnswered else { return .main }
-        guard selectedAnswer == answer.id else { return .main }
+        guard isAnswered else { return .accent }
+        guard selectedAnswer == answer.id else { return .accent }
         return answer.isCorrect ? .green : .red
     }
     

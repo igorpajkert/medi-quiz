@@ -25,7 +25,7 @@ struct CategoryDetailView: View {
             NavigationLink(destination: QuizView(category: $category)) {
                 ZStack {
                     Circle()
-                        .stroke(.main, lineWidth: 5)
+                        .stroke(.accent, lineWidth: 5)
                     VStack {
                         Image(systemName: "play.fill")
                             .font(.largeTitle)

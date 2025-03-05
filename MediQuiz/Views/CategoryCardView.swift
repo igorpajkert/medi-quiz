@@ -14,7 +14,7 @@ struct CategoryCardView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.main, lineWidth: 2)
+                .stroke(Color.accent, lineWidth: 2)
             VStack(alignment: .leading) {
                 Text(category.title)
                     .font(.title)

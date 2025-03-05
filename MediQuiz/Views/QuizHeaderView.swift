@@ -26,9 +26,9 @@ struct QuizHeaderView: View {
                 Text("\(totalQuestions)")
             }
             .font(.footnote)
-            .foregroundStyle(.main)
+            .foregroundStyle(.accent)
             ProgressView(value: progress)
-                .tint(.main)
+                .tint(.accent)
                 .progressViewStyle(.linear)
             Text(text)
                 .font(.title)
