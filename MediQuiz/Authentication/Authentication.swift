@@ -16,7 +16,7 @@ final class Authentication {
     
     private var handle: AuthStateDidChangeListenerHandle?
     
-    private init() {
+    init() {
         handle = Auth.auth().addStateDidChangeListener { auth, user in
             self.user = user
             

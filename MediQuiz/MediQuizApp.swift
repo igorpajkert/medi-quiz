@@ -11,6 +11,8 @@ import FirebaseCore
 @main
 struct MediQuizApp: App {
     
+    @State private var authentication = Authentication()
+    
     init() {
         FirebaseApp.configure()
     }
@@ -18,6 +20,7 @@ struct MediQuizApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .auth(authentication)
         }
     }
 }
