@@ -11,8 +11,6 @@ import FirebaseAuth
 @Observable
 final class Authentication {
     
-    static let shared = Authentication()
-    
     var user: User?
     var userData: UserData?
     
