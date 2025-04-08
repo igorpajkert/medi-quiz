@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F05821B02DA5AD7900E2898E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F05821AF2DA5AD7900E2898E /* FirebaseAuth */; };
+		F05821B22DA5AD7900E2898E /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F05821B12DA5AD7900E2898E /* FirebaseCore */; };
+		F05821B42DA5AD7900E2898E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F05821B32DA5AD7900E2898E /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F058219D2DA5A81300E2898E /* MediQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05821B22DA5AD7900E2898E /* FirebaseCore in Frameworks */,
+				F05821B02DA5AD7900E2898E /* FirebaseAuth in Frameworks */,
+				F05821B42DA5AD7900E2898E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				F058219F2DA5A81300E2898E /* MediQuiz */,
+				F05821AE2DA5AD7900E2898E /* Frameworks */,
 				F058219E2DA5A81300E2898E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +53,13 @@
 				F058219D2DA5A81300E2898E /* MediQuiz.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F05821AE2DA5AD7900E2898E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,6 +82,9 @@
 			);
 			name = MediQuiz;
 			packageProductDependencies = (
+				F05821AF2DA5AD7900E2898E /* FirebaseAuth */,
+				F05821B12DA5AD7900E2898E /* FirebaseCore */,
+				F05821B32DA5AD7900E2898E /* FirebaseFirestore */,
 			);
 			productName = MediQuiz;
 			productReference = F058219D2DA5A81300E2898E /* MediQuiz.app */;
@@ -94,6 +114,9 @@
 			);
 			mainGroup = F05821942DA5A81300E2898E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F05821AD2DA5AD6600E2898E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F058219E2DA5A81300E2898E /* Products */;
 			projectDirPath = "";
@@ -330,6 +353,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F05821AD2DA5AD6600E2898E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F05821AF2DA5AD7900E2898E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05821AD2DA5AD6600E2898E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F05821B12DA5AD7900E2898E /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05821AD2DA5AD6600E2898E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F05821B32DA5AD7900E2898E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F05821AD2DA5AD6600E2898E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F05821952DA5A81300E2898E /* Project object */;
 }
