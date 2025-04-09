@@ -14,6 +14,10 @@ final class Authentication {
     var user: User?
     var userData: UserData?
     
+    var email = ""
+    var password = ""
+    var errorWrapper: ErrorWrapper?
+    
     private var handle: AuthStateDidChangeListenerHandle?
     
     init() {

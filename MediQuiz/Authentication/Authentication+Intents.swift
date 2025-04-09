@@ -17,8 +17,21 @@ extension Authentication {
     }
     
     /// Signs in an existing user with the provided email and password.
-    func signIn(with email: String, password: String) async throws {
-        try await Auth.auth().signIn(withEmail: email, password: password)
+    func signIn(with email: String, password: String) {
+        Task {
+            do {
+                try await Auth.auth().signIn(withEmail: email, password: password)
+            } catch {
+                errorWrapper = .init(
+                    error: error,
+                    guidance: "guidance.signIn.failed",
+                    action: .init(
+                        title: "action.tryAgain",
+                        action: clearCredentials
+                    )
+                )
+            }
+        }
     }
     
     /// Signs out the currently authenticated user.
@@ -72,5 +85,11 @@ extension Authentication {
         guard let user = user else { throw AuthError.noUserFound }
         return try await DatabaseController()
             .getDocument(user.uid, within: "user_data")
+    }
+    
+    // MARK: - Common
+    func clearCredentials() {
+        email.clear()
+        password.clear()
     }
 }
