@@ -17,6 +17,22 @@
         }
       }
     },
+    "button.dismiss" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        }
+      }
+    },
     "button.passwordReset" : {
       "localizations" : {
         "en" : {
@@ -164,6 +180,22 @@
         }
       }
     },
+    "text.errorSheet.contactSupport" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you have a problem with the application or want to report a bug, send an email to: support@ipsoftware.org"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli masz problem z aplikacją lub chcesz zgłosić błąd wyślij wiadomość email na adres: support@ipsoftware.org"
+          }
+        }
+      }
+    },
     "text.signIn" : {
       "localizations" : {
         "en" : {
@@ -176,6 +208,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaloguj się do swojego konta."
+          }
+        }
+      }
+    },
+    "title.errorSheet" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Błąd"
           }
         }
       }

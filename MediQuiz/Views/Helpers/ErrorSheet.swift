@@ -9,10 +9,38 @@ import SwiftUI
 
 struct ErrorSheet: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     let wrapper: ErrorWrapper
     
     var body: some View {
-        Text(wrapper.guidance)
+        ScrollView {
+            VStack(spacing: 16) {
+                imageError
+                textError
+                Divider()
+                TextSecondary(text: wrapper.guidance)
+                TextTertiary(text: "text.errorSheet.contactSupport")
+                ButtonPrimary(title: wrapper.action?.title ?? "button.dismiss") {
+                    wrapper.action?.action()
+                    dismiss()
+                }
+            }
+            .padding()
+            .multilineTextAlignment(.center)
+        }
+    }
+    
+    private var imageError: some View {
+        Image(systemName: "xmark.circle")
+            .font(.title)
+            .imageScale(.large)
+            .foregroundStyle(.red)
+    }
+    
+    private var textError: some View {
+        Text(wrapper.error.localizedDescription)
+            .font(.headline)
     }
 }
 
@@ -20,7 +48,7 @@ struct ErrorSheet: View {
     ErrorSheet(
         wrapper: ErrorWrapper(
             error: ErrorWrapper.SampleError.sample,
-            guidance: "Test"
+            guidance: "Try again later."
         )
     )
 }
