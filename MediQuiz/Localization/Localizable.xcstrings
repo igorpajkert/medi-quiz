@@ -49,6 +49,22 @@
         }
       }
     },
+    "button.send" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyślij"
+          }
+        }
+      }
+    },
     "button.signIn" : {
       "localizations" : {
         "en" : {
@@ -109,6 +125,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nie znaleziono żadnego zalogowanego użytkownika."
+          }
+        }
+      }
+    },
+    "guidance.passwordReset.failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to send password reset email. Please try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wysłanie maila z prośba o zmianę hasła nie powiodło się. Spróbuj ponownie."
           }
         }
       }
@@ -196,6 +228,22 @@
         }
       }
     },
+    "text.passwordReset" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send a password reset email to:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyślij prośbę o zmianę hasła na email:"
+          }
+        }
+      }
+    },
     "text.signIn" : {
       "localizations" : {
         "en" : {
@@ -212,18 +260,18 @@
         }
       }
     },
-    "title.errorSheet" : {
+    "title.passwordReset" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Error"
+            "value" : "Reset Password"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Błąd"
+            "value" : "Zresetuj Hasło"
           }
         }
       }

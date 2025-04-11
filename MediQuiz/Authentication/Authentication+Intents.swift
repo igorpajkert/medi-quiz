@@ -50,8 +50,14 @@ extension Authentication {
     }
     
     /// Sends a password reset email to the specified email address.
-    func sendPasswordResetEmail(to email: String) async throws {
-        try await Auth.auth().sendPasswordReset(withEmail: email)
+    func sendPasswordResetEmail(to email: String) {
+        Task {
+            do {
+                try await Auth.auth().sendPasswordReset(withEmail: email)
+            } catch {
+                errorWrapper = .init(error: error, guidance: "guidance.passwordReset.failed")
+            }
+        }
     }
     
     /// Re-authenticates the current user using the provided email and password.
