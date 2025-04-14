@@ -93,6 +93,30 @@ extension Authentication {
             .getDocument(user.uid, within: "user_data")
     }
     
+    func setUserName(for user: UserData) throws {
+        try DatabaseController().set(user, in: user.id, within: "user_data")
+    }
+    
+    // MARK: - Register
+    func register(account: Account) {
+        Task {
+            do {
+                try await signUp(with: newAccount.email, password: newAccount.password)
+                
+                if let user = Auth.auth().currentUser {
+                    try setUserName(for: .init(id: user.uid, name: account.name))
+                }
+                
+                signIn(with: newAccount.email, password: newAccount.password)
+                
+                newAccount.clear()
+                signUpSuccess = true
+            } catch {
+                errorWrapper = .init(error: error, guidance: "guidance.register.failed")
+            }
+        }
+    }
+    
     // MARK: - Common
     func clearCredentials() {
         email.clear()

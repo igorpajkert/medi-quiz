@@ -17,6 +17,22 @@
         }
       }
     },
+    "button.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        }
+      }
+    },
     "button.dismiss" : {
       "localizations" : {
         "en" : {
@@ -45,6 +61,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Przypomnij hasło"
+          }
+        }
+      }
+    },
+    "button.register" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zarejestruj"
           }
         }
       }
@@ -145,6 +177,9 @@
         }
       }
     },
+    "guidance.register.failed" : {
+
+    },
     "guidance.signIn.failed" : {
       "localizations" : {
         "en" : {
@@ -161,8 +196,21 @@
         }
       }
     },
-    "Hello, World!" : {
-      "shouldTranslate" : false
+    "label.confirmPassword" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm Password"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potwierdź Hasło"
+          }
+        }
+      }
     },
     "label.email" : {
       "localizations" : {
@@ -180,7 +228,71 @@
         }
       }
     },
+    "label.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwa"
+          }
+        }
+      }
+    },
     "label.password" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hasło"
+          }
+        }
+      }
+    },
+    "section.email" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "section.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwa"
+          }
+        }
+      }
+    },
+    "section.password" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -288,6 +400,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaloguj"
+          }
+        }
+      }
+    },
+    "title.signup" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Account"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utwórz Konto"
           }
         }
       }

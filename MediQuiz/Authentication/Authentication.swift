@@ -16,9 +16,15 @@ final class Authentication {
     
     var email = ""
     var password = ""
+    var newAccount = Account()
     var errorWrapper: ErrorWrapper?
+    var signUpSuccess = false
     
     private var handle: AuthStateDidChangeListenerHandle?
+    
+    var isLoggedIn: Bool {
+        user != nil
+    }
     
     init() {
         handle = Auth.auth().addStateDidChangeListener { auth, user in

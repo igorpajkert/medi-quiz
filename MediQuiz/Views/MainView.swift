@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @Environment(\.auth) var auth
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            SignInView()
+        }
     }
 }
 
