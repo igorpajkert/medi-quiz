@@ -49,6 +49,22 @@
         }
       }
     },
+    "button.editProfile" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edytuj"
+          }
+        }
+      }
+    },
     "button.passwordReset" : {
       "localizations" : {
         "en" : {
@@ -109,6 +125,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaloguj"
+          }
+        }
+      }
+    },
+    "button.signOut" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign Out"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyloguj"
           }
         }
       }
@@ -178,7 +210,20 @@
       }
     },
     "guidance.register.failed" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Account registration failed. Please try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rejestracja konta nie powiodła się. Spróbuj ponownie."
+          }
+        }
+      }
     },
     "guidance.signIn.failed" : {
       "localizations" : {
@@ -192,6 +237,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Logowanie nie powiodło się. Spróbuj ponownie."
+          }
+        }
+      }
+    },
+    "guidance.signOut.failed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign-out failed. Please try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wylogowanie nie powiodło się. Spróbuj ponownie."
           }
         }
       }
@@ -308,6 +369,22 @@
         }
       }
     },
+    "tab.account" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Account"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konto"
+          }
+        }
+      }
+    },
     "text.accountSupport" : {
       "localizations" : {
         "en" : {
@@ -368,6 +445,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaloguj się do swojego konta."
+          }
+        }
+      }
+    },
+    "title.account" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Account"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konto"
           }
         }
       }

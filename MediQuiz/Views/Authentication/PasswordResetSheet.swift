@@ -11,8 +11,8 @@ struct PasswordResetSheet: View {
     
     @State private var email = ""
     
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.auth) var auth
+    @Environment(\.auth) private var auth
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         @Bindable var auth = auth

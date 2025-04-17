@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @Environment(\.auth) var auth
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.colorScheme) var scheme
+    @Environment(\.auth) private var auth
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var scheme
     
     private var fieldStyle: Color {
         scheme == .light ? .black : .white

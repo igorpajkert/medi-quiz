@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - Primary
 struct ButtonPrimary: View {
     
     let title: LocalizedStringKey
@@ -41,6 +42,7 @@ struct ButtonPrimary: View {
     ButtonPrimary(title: "Primary Button", action: {})
 }
 
+// MARK: - Secondary
 struct ButtonSecondary: View {
     
     let title: LocalizedStringKey
@@ -75,6 +77,7 @@ struct ButtonSecondary: View {
     ButtonSecondary(title: "Secondary Button", action: {})
 }
 
+// MARK: - Tertiary
 struct ButtonTertiary: View {
     
     let title: LocalizedStringKey

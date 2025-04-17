@@ -35,8 +35,15 @@ extension Authentication {
     }
     
     /// Signs out the currently authenticated user.
-    func signOut() throws {
-        try Auth.auth().signOut()
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            errorWrapper = .init(
+                error: error,
+                guidance: "guidance.signOut.failed"
+            )
+        }
     }
     
     // MARK: - Authentication

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct MainView: View {
     
-    @Environment(\.auth) var auth
+    @Environment(\.auth) private var auth
     
     var body: some View {
-        NavigationStack {
-            SignInView()
+        TabView {
+            Tab("tab.account", systemImage: "person.crop.circle") {
+                AccountView()
+            }
         }
     }
 }

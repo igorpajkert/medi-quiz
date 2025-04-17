@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - Primary
 struct TextPrimary: View {
     let text: LocalizedStringKey
     
@@ -20,6 +21,7 @@ struct TextPrimary: View {
     TextPrimary(text: "Test")
 }
 
+// MARK: - Secondary
 struct TextSecondary: View {
     let text: LocalizedStringKey
     
@@ -33,6 +35,7 @@ struct TextSecondary: View {
     TextSecondary(text: "Test")
 }
 
+// MARK: - Tertiary
 struct TextTertiary: View {
     let text: LocalizedStringKey
     

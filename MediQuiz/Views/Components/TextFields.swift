@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - TextField
 struct TextFieldPrimary: View {
     
     var label: LocalizedStringKey
@@ -26,6 +27,7 @@ struct TextFieldPrimary: View {
     TextFieldPrimary(label: "Test", text: .constant(""))
 }
 
+// MARK: - SecureField
 struct SecureFieldPrimary: View {
     
     var label: LocalizedStringKey

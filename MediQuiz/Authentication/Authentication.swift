@@ -22,7 +22,7 @@ final class Authentication {
     
     private var handle: AuthStateDidChangeListenerHandle?
     
-    var isLoggedIn: Bool {
+    var isSignIn: Bool {
         user != nil
     }
     

@@ -1,5 +1,5 @@
 //
-//  SignInView.swift
+//  SignInSheet.swift
 //  MediQuiz
 //
 //  Created by Igor Pajkert on 09/04/2025.
@@ -7,35 +7,44 @@
 
 import SwiftUI
 
-struct SignInView: View {
+struct SignInSheet: View {
     
     @State private var isShowingPasswordResetSheet = false
     @State private var isShowingSignUpView = false
     
-    @Environment(\.auth) var auth
+    @Environment(\.auth) private var auth
     
     var body: some View {
         @Bindable var auth = auth
         
-        ScrollView {
-            VStack(spacing: 16) {
-                SampleImage(image: .account)
-                headline
-                Credentials(email: $auth.email, password: $auth.password)
-                buttonPasswordReset
-                buttonSignIn
-                buttonSignUp
-            }
-            .navigationTitle("title.signIn")
-            .padding()
-            .sheet(isPresented: $isShowingPasswordResetSheet) {
-                PasswordResetSheet()
-            }
-            .sheet(item: $auth.errorWrapper) { wrapper in
-                ErrorSheet(wrapper: wrapper)
-            }
-            .navigationDestination(isPresented: $isShowingSignUpView) {
-                SignUpView()
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 16) {
+                    SampleImage(image: .account)
+                    headline
+                    Credentials(
+                        email: $auth.email,
+                        password: $auth.password
+                    )
+                    buttonPasswordReset
+                    buttonSignIn
+                    buttonSignUp
+                }
+                .navigationTitle("title.signIn")
+                .padding()
+                .sheet(
+                    isPresented: $isShowingPasswordResetSheet
+                ) {
+                    PasswordResetSheet()
+                }
+                .sheet(item: $auth.errorWrapper) { wrapper in
+                    ErrorSheet(wrapper: wrapper)
+                }
+                .navigationDestination(
+                    isPresented: $isShowingSignUpView
+                ) {
+                    SignUpView()
+                }
             }
         }
     }
@@ -72,8 +81,6 @@ struct SignInView: View {
 }
 
 #Preview {
-    NavigationStack {
-        SignInView()
-            .auth(.init())
-    }
+    SignInSheet()
+        .auth(.init())
 }
