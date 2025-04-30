@@ -9,22 +9,25 @@ import SwiftUI
 
 struct SignInSheet: View {
     
+    @State private var email = ""
+    @State private var password = ""
+    
     @State private var isShowingPasswordResetSheet = false
     @State private var isShowingSignUpView = false
+    @State private var errorWrapper: ErrorWrapper?
     
     @Environment(\.auth) private var auth
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        @Bindable var auth = auth
-        
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
                     SampleImage(image: .account)
                     headline
                     Credentials(
-                        email: $auth.email,
-                        password: $auth.password
+                        email: $email,
+                        password: $password
                     )
                     buttonPasswordReset
                     buttonSignIn
@@ -32,13 +35,13 @@ struct SignInSheet: View {
                 }
                 .navigationTitle("title.signIn")
                 .padding()
+                .sheet(item: $errorWrapper) { wrapper in
+                    ErrorSheet(wrapper: wrapper)
+                }
                 .sheet(
                     isPresented: $isShowingPasswordResetSheet
                 ) {
                     PasswordResetSheet()
-                }
-                .sheet(item: $auth.errorWrapper) { wrapper in
-                    ErrorSheet(wrapper: wrapper)
                 }
                 .navigationDestination(
                     isPresented: $isShowingSignUpView
@@ -66,16 +69,33 @@ struct SignInSheet: View {
     }
     
     private var buttonSignIn: some View {
-        ButtonPrimary(title: "button.signIn") {
-            auth.signIn(with: auth.email, password: auth.password)
-        }
-        .bold()
-        .disabled(auth.email.isEmpty || auth.password.isEmpty)
+        ButtonPrimary(title: "button.signIn", action: onSignIn)
+            .bold()
+            .disabled(email.isEmpty || password.isEmpty)
     }
     
     private var buttonSignUp: some View {
         ButtonSecondary(title: "button.signUp") {
             isShowingSignUpView = true
+        }
+    }
+    
+    // MARK: - Intents
+    private func onSignIn() {
+        Task {
+            do {
+                try await auth.signIn(with: email, password: password)
+                dismiss()
+            } catch {
+                errorWrapper = .init(
+                    error: error,
+                    guidance: "guidance.signIn.failed",
+                    action: .init(title: "action.tryAgain") {
+                        email.clear()
+                        password.clear()
+                    }
+                )
+            }
         }
     }
 }

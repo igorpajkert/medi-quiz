@@ -10,13 +10,12 @@ import SwiftUI
 struct PasswordResetSheet: View {
     
     @State private var email = ""
+    @State private var errorWrapper: ErrorWrapper?
     
     @Environment(\.auth) private var auth
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        @Bindable var auth = auth
-        
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
@@ -27,7 +26,7 @@ struct PasswordResetSheet: View {
                 }
                 .padding()
                 .navigationTitle("title.passwordReset")
-                .sheet(item: $auth.errorWrapper) { wrapper in
+                .sheet(item: $errorWrapper) { wrapper in
                     ErrorSheet(wrapper: wrapper)
                 }
             }
@@ -45,10 +44,22 @@ struct PasswordResetSheet: View {
     }
     
     private var buttonSend: some View {
-        ButtonPrimary(title: "button.send") {
-            auth.sendPasswordResetEmail(to: email)
+        ButtonPrimary(title: "button.send", action: onSend)
+            .disabled(email.isEmpty)
+    }
+    
+    // MARK: - Intents
+    private func onSend() {
+        Task {
+            do {
+                try await auth.sendPasswordResetEmail(to: email)
+            } catch {
+                errorWrapper = .init(
+                    error: error,
+                    guidance: "guidance.passwordReset.failed"
+                )
+            }
         }
-        .disabled(email.isEmpty)
     }
 }
 

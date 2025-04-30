@@ -14,11 +14,9 @@ final class Authentication {
     var user: User?
     var userData: UserData?
     
-    var email = ""
-    var password = ""
     var newAccount = Account()
-    var errorWrapper: ErrorWrapper?
     var signUpSuccess = false
+    var passwordChangeSuccess = false
     
     private var handle: AuthStateDidChangeListenerHandle?
     

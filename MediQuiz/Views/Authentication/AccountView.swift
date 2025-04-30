@@ -11,6 +11,7 @@ struct AccountView: View {
     
     @State private var isShowingSignInSheet = false
     @State private var isShowingEditSheet = false
+    @State private var errorWrapper: ErrorWrapper?
     
     @Environment(\.auth) private var auth
     
@@ -27,8 +28,6 @@ struct AccountView: View {
     }
     
     var body: some View {
-        @Bindable var auth = auth
-        
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
@@ -45,14 +44,14 @@ struct AccountView: View {
                 }
                 .padding()
                 .navigationTitle("title.account")
-                .sheet(item: $auth.errorWrapper) { wrapper in
-                    ErrorSheet(wrapper: wrapper)
-                }
                 .sheet(isPresented: $isShowingSignInSheet) {
                     SignInSheet()
                 }
                 .sheet(isPresented: $isShowingEditSheet) {
                     AccountEditSheet()
+                }
+                .sheet(item: $errorWrapper) { wrapper in
+                    ErrorSheet(wrapper: wrapper)
                 }
             }
         }
@@ -75,16 +74,26 @@ struct AccountView: View {
     }
     
     private var buttonEditProfile: some View {
-        ButtonSecondary(title: "button.editProfile") {
+        ButtonPrimary(title: "button.editProfile") {
             isShowingEditSheet.toggle()
         }
     }
     
     private var buttonSignOut: some View {
-        ButtonSecondary(title: "button.signOut") {
-            auth.signOut()
+        ButtonPrimary(title: "button.signOut", action: onSignOut)
+            .tint(.red)
+    }
+    
+    // MARK: - Intents
+    private func onSignOut() {
+        do {
+            try auth.signOut()
+        } catch {
+            errorWrapper = .init(
+                error: error,
+                guidance: "guidance.signOut.failed"
+            )
         }
-        .tint(.red)
     }
 }
 

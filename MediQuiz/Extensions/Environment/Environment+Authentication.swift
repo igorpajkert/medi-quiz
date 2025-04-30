@@ -1,5 +1,5 @@
 //
-//  Authentication+Environment.swift
+//  Environment+Authentication.swift
 //  MediQuiz
 //
 //  Created by Igor Pajkert on 08/04/2025.

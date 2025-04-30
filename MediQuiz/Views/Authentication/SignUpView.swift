@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
     
+    @State private var errorWrapper: ErrorWrapper?
+    
     @Environment(\.auth) private var auth
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var scheme
@@ -33,6 +35,9 @@ struct SignUpView: View {
             .padding()
             .navigationTitle("title.signup")
             .navigationBarTitleDisplayMode(.inline)
+            .sheet(item: $errorWrapper) { wrapper in
+                ErrorSheet(wrapper: wrapper)
+            }
             .onChange(of: auth.signUpSuccess) { old, new in
                 if new {
                     dismiss()
@@ -80,15 +85,27 @@ struct SignUpView: View {
     }
     
     private var buttonRegister: some View {
-        ButtonPrimary(title: "button.register") {
-            auth.register(account: auth.newAccount)
-        }
-        .disabled(!auth.newAccount.isCredentialsValid)
+        ButtonPrimary(title: "button.register", action: onRegister)
+            .disabled(!auth.newAccount.isCredentialsValid)
     }
     
     private var buttonCancel: some View {
         ButtonSecondary(title: "button.cancel") {
             dismiss()
+        }
+    }
+    
+    // MARK: - Intents
+    private func onRegister() {
+        Task {
+            do {
+                try await auth.register(account: auth.newAccount)
+            } catch {
+                errorWrapper = .init(
+                    error: error,
+                    guidance: "guidance.register.failed"
+                )
+            }
         }
     }
 }

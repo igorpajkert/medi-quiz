@@ -21,10 +21,7 @@ struct ErrorSheet: View {
                 Divider()
                 TextSecondary(text: wrapper.guidance)
                 TextTertiary(text: "text.errorSheet.contactSupport")
-                ButtonPrimary(title: wrapper.action?.title ?? "button.dismiss") {
-                    wrapper.action?.action()
-                    dismiss()
-                }
+                buttonAction
             }
             .padding()
             .multilineTextAlignment(.center)
@@ -41,6 +38,13 @@ struct ErrorSheet: View {
     private var textError: some View {
         Text(wrapper.error.localizedDescription)
             .font(.headline)
+    }
+    
+    private var buttonAction: some View {
+        ButtonPrimary(title: wrapper.action?.title ?? "button.dismiss") {
+            wrapper.action?.action()
+            dismiss()
+        }
     }
 }
 

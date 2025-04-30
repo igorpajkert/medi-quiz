@@ -17,38 +17,18 @@ extension Authentication {
     }
     
     /// Signs in an existing user with the provided email and password.
-    func signIn(with email: String, password: String) {
-        Task {
-            do {
-                try await Auth.auth().signIn(withEmail: email, password: password)
-            } catch {
-                errorWrapper = .init(
-                    error: error,
-                    guidance: "guidance.signIn.failed",
-                    action: .init(
-                        title: "action.tryAgain",
-                        action: clearCredentials
-                    )
-                )
-            }
-        }
+    func signIn(with email: String, password: String) async throws {
+        try await Auth.auth().signIn(withEmail: email, password: password)
     }
     
     /// Signs out the currently authenticated user.
-    func signOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            errorWrapper = .init(
-                error: error,
-                guidance: "guidance.signOut.failed"
-            )
-        }
+    func signOut() throws {
+        try Auth.auth().signOut()
     }
     
     // MARK: - Authentication
     /// Sends a verification email to the currently authenticated user.
-    func sendVerificationEmail() async throws {
+    private func sendVerificationEmail() async throws {
         guard let user = Auth.auth().currentUser else {
             throw AuthError.noUserFound
         }
@@ -57,18 +37,12 @@ extension Authentication {
     }
     
     /// Sends a password reset email to the specified email address.
-    func sendPasswordResetEmail(to email: String) {
-        Task {
-            do {
-                try await Auth.auth().sendPasswordReset(withEmail: email)
-            } catch {
-                errorWrapper = .init(error: error, guidance: "guidance.passwordReset.failed")
-            }
-        }
+    func sendPasswordResetEmail(to email: String) async throws {
+        try await Auth.auth().sendPasswordReset(withEmail: email)
     }
     
     /// Re-authenticates the current user using the provided email and password.
-    func reauthenticateUser(with email: String, password: String) async throws {
+    private func reauthenticateUser(with email: String, password: String) async throws {
         guard let user = Auth.auth().currentUser else {
             throw AuthError.noUserFound
         }
@@ -79,7 +53,7 @@ extension Authentication {
     
     // MARK: - Updating Credentials
     /// Updates the password of the currently authenticated user.
-    func updatePassword(to password: String) async throws {
+    private func updatePassword(to password: String) async throws {
         guard let user = Auth.auth().currentUser else {
             throw AuthError.noUserFound
         }
@@ -90,6 +64,29 @@ extension Authentication {
             throw AuthError.authenticationRequired
         } catch {
             throw error
+        }
+    }
+    
+    func changePassword(from oldPassword: String, to newPassword: String) async throws {
+        guard let email = user?.email else {
+            throw AuthError.noUserFound
+        }
+        
+        try await reauthenticateUser(with: email, password: oldPassword)
+        try await updatePassword(to: newPassword)
+        passwordChangeSuccess = true
+    }
+    
+    func changeUserName(to newUserName: String) throws {
+        guard let id = userData?.id else {
+            throw AuthError.noUserFound
+        }
+        
+        let newUserName = UserData(id: id, name: newUserName)
+        try setUserName(for: newUserName)
+        
+        Task {
+            try await userData = fetchUserData()
         }
     }
     
@@ -105,28 +102,17 @@ extension Authentication {
     }
     
     // MARK: - Register
-    func register(account: Account) {
-        Task {
-            do {
-                try await signUp(with: newAccount.email, password: newAccount.password)
-                
-                if let user = Auth.auth().currentUser {
-                    try setUserName(for: .init(id: user.uid, name: account.name))
-                }
-                
-                signIn(with: newAccount.email, password: newAccount.password)
-                
-                newAccount.clear()
-                signUpSuccess = true
-            } catch {
-                errorWrapper = .init(error: error, guidance: "guidance.register.failed")
-            }
+    func register(account: Account) async throws {
+        try await signUp(with: newAccount.email, password: newAccount.password)
+        
+        if let user = Auth.auth().currentUser {
+            try setUserName(for: .init(id: user.uid, name: account.name))
         }
-    }
-    
-    // MARK: - Common
-    func clearCredentials() {
-        email.clear()
-        password.clear()
+        
+        try await signIn(with: newAccount.email, password: newAccount.password)
+        try await sendVerificationEmail()
+        
+        newAccount.clear()
+        signUpSuccess = true
     }
 }
