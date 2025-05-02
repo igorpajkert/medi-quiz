@@ -497,6 +497,9 @@
         }
       }
     },
+    "Main View" : {
+
+    },
     "section.changePassword" : {
       "localizations" : {
         "en" : {
@@ -594,6 +597,7 @@
       }
     },
     "tab.account" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -733,6 +737,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zaloguj się do swojego konta."
+          }
+        }
+      }
+    },
+    "text.signIn.welcome" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign in or create an account"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaloguj się lub utwórz konto"
+          }
+        }
+      }
+    },
+    "text.signUp.hint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign up to get the most out of the app"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zarejestruj się aby w pełni skorzystać z możliwości aplikacji"
           }
         }
       }

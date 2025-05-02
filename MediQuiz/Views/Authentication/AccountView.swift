@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AccountView: View {
     
-    @State private var isShowingSignInSheet = false
     @State private var isShowingEditSheet = false
     @State private var errorWrapper: ErrorWrapper?
     
@@ -23,36 +22,23 @@ struct AccountView: View {
         auth.user?.email ?? "user@example.com"
     }
     
-    private var isSignIn: Bool {
-        auth.isSignIn
-    }
-    
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 16) {
-                    SampleImage(image: .avatar)
-                    textName
-                    textEmail
-                    Divider()
-                    if isSignIn {
-                        buttonEditProfile
-                        buttonSignOut
-                    } else {
-                        buttonSignIn
-                    }
-                }
-                .padding()
-                .navigationTitle("title.account")
-                .sheet(isPresented: $isShowingSignInSheet) {
-                    SignInSheet()
-                }
-                .sheet(isPresented: $isShowingEditSheet) {
-                    AccountEditSheet()
-                }
-                .sheet(item: $errorWrapper) { wrapper in
-                    ErrorSheet(wrapper: wrapper)
-                }
+        ScrollView {
+            VStack(spacing: 16) {
+                SampleImage(image: .avatar)
+                textName
+                textEmail
+                Divider()
+                buttonEditProfile
+                buttonSignOut
+            }
+            .padding()
+            .navigationTitle("title.account")
+            .sheet(isPresented: $isShowingEditSheet) {
+                AccountEditSheet()
+            }
+            .sheet(item: $errorWrapper) { wrapper in
+                ErrorSheet(wrapper: wrapper)
             }
         }
     }
@@ -65,12 +51,6 @@ struct AccountView: View {
     private var textEmail: some View {
         Text(email)
             .foregroundColor(.secondary)
-    }
-    
-    private var buttonSignIn: some View {
-        ButtonPrimary(title: "button.signIn") {
-            isShowingSignInSheet.toggle()
-        }
     }
     
     private var buttonEditProfile: some View {

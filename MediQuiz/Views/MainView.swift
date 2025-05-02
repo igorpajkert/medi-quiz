@@ -9,12 +9,25 @@ import SwiftUI
 
 struct MainView: View {
     
-    @Environment(\.auth) private var auth
+    @State private var isShowingAccountView = false
     
     var body: some View {
-        TabView {
-            Tab("tab.account", systemImage: "person.crop.circle") {
-                AccountView()
+        NavigationStack {
+            Text("Main View")
+                .navigationTitle("Main View")
+                .navigationDestination(isPresented: $isShowingAccountView) {
+                    AccountHost()
+                }
+                .toolbar {
+                    toolbarButtonAccount
+                }                
+        }
+    }
+    
+    private var toolbarButtonAccount: some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button(action: { isShowingAccountView = true}) {
+                Image(systemName: "person.crop.circle")
             }
         }
     }

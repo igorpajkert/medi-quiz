@@ -13,15 +13,18 @@ struct ButtonPrimary: View {
     let title: LocalizedStringKey
     let action: () -> Void
     let width: CGFloat?
+    let shadowRadius: CGFloat
     
     init(
         title: LocalizedStringKey,
         action: @escaping () -> Void,
-        width: CGFloat? = nil
+        width: CGFloat? = nil,
+        shadowRadius: CGFloat = 4
     ) {
         self.title = title
         self.action = action
         self.width = width
+        self.shadowRadius = shadowRadius
     }
     
     var body: some View {
@@ -35,6 +38,7 @@ struct ButtonPrimary: View {
         }
         .frame(width: width)
         .fixedSize(horizontal: false, vertical: true)
+        .shadow(radius: shadowRadius)
     }
 }
 
@@ -48,15 +52,18 @@ struct ButtonSecondary: View {
     let title: LocalizedStringKey
     let action: () -> Void
     let width: CGFloat?
+    let shadowRadius: CGFloat
     
     init(
         title: LocalizedStringKey,
         action: @escaping () -> Void,
-        width: CGFloat? = nil
+        width: CGFloat? = nil,
+        shadowRadius: CGFloat = 4
     ) {
         self.title = title
         self.action = action
         self.width = width
+        self.shadowRadius = shadowRadius
     }
     
     var body: some View {
@@ -70,6 +77,7 @@ struct ButtonSecondary: View {
         }
         .frame(width: width)
         .fixedSize(horizontal: false, vertical: true)
+        .shadow(radius: shadowRadius)
     }
 }
 
