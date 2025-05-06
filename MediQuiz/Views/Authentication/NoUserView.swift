@@ -16,6 +16,8 @@ struct NoUserView: View {
             AnimatedMeshGradient()
             ScrollView {
                 VStack {
+                    Spacer(minLength: 100)
+                    
                     circleImage
                     
                     TextPrimary(text: "text.signIn.welcome")
@@ -28,17 +30,18 @@ struct NoUserView: View {
                         action: { isShowingSignInSheet.toggle() },
                         shadowRadius: 12
                     )
-                    .padding()
+                    .padding(.vertical)
                     
                     TextTertiary(text: "text.signUp.hint")
                 }
-                .offset(y: 200)
+                .padding()
                 .multilineTextAlignment(.center)
                 .sheet(isPresented: $isShowingSignInSheet) {
                     SignInSheet()
                 }
                 .toolbarBackgroundVisibility(.hidden, for: .navigationBar)
             }
+            .scrollIndicators(.never)
         }
     }
     
@@ -52,8 +55,6 @@ struct NoUserView: View {
         .overlay {
             Circle().stroke(Color.white, lineWidth: 6)
         }
-        .offset(y: -100)
-        .padding(.bottom, -100)
     }
 }
 

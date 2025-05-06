@@ -39,6 +39,7 @@ struct PasswordChangeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+                Spacer(minLength: 100)
                 VStack(spacing: 16) {
                     SampleImage(image: .password)
                     headline
@@ -64,6 +65,7 @@ struct PasswordChangeView: View {
                     }
                 }
             }
+            .scrollIndicators(.never)
         }
     }
     

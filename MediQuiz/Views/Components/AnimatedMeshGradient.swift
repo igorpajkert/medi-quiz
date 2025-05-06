@@ -22,7 +22,7 @@ struct AnimatedMeshGradient: View {
                 [0.0, 1.0], [0.5, 1.0], [1.0, 1.0]
             ],
             colors: [
-                secondWave ? .lightLavender : .accent, firstWave ? .lightLavender : .lavender, secondWave ? .accent : .lightLavender,
+                secondWave ? .lightLavender : .lavender, firstWave ? .lightLavender : .lavender, secondWave ? .accent : .lightLavender,
                 secondWave ? .lavender : .accent, .lavender, firstWave ? .accent : .lavender,
                 firstWave ? .accent : .darkLavender, secondWave ? .darkLavender : .lavender, firstWave ? .darkLavender : .accent
             ]

@@ -49,6 +49,7 @@ struct SignInSheet: View {
                     SignUpView()
                 }
             }
+            .scrollIndicators(.never)
         }
     }
     

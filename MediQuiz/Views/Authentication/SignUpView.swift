@@ -44,6 +44,7 @@ struct SignUpView: View {
                 }
             }
         }
+        .scrollIndicators(.never)
     }
     
     @ViewBuilder

@@ -25,6 +25,7 @@ struct AccountView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
+                Spacer(minLength: 100)
                 SampleImage(image: .avatar)
                 textName
                 textEmail
@@ -41,6 +42,7 @@ struct AccountView: View {
                 ErrorSheet(wrapper: wrapper)
             }
         }
+        .scrollIndicators(.never)
     }
     
     private var textName: some View {
