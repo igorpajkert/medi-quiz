@@ -17,17 +17,17 @@ struct ErrorWrapper: Identifiable {
     /// A user-friendly message or guidance on how to handle the error.
     let guidance: LocalizedStringKey
     /// An optional action to perform when the error is dismissed.
-    let dismissAction: ErrorAction?
+    let action: ErrorAction?
     
     /// Creates a new `ErrorWrapper` instance.
     init(id: UUID = UUID(),
          error: Error,
          guidance: LocalizedStringKey,
-         dismissAction: ErrorAction? = nil) {
+         action: ErrorAction? = nil) {
         self.id = id
         self.error = error
         self.guidance = guidance
-        self.dismissAction = dismissAction
+        self.action = action
     }
     
     /// An action that may be performed when dismissing an error.
