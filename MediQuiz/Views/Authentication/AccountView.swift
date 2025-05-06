@@ -35,6 +35,7 @@ struct AccountView: View {
             }
             .padding()
             .navigationTitle("title.account")
+            .navigationBarTitleDisplayMode(.large)
             .sheet(isPresented: $isShowingEditSheet) {
                 AccountEditSheet()
             }
@@ -80,5 +81,7 @@ struct AccountView: View {
 }
 
 #Preview {
-    AccountView()
+    NavigationStack {
+        AccountView()
+    }
 }

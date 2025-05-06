@@ -41,9 +41,9 @@
 		F05821942DA5A81300E2898E = {
 			isa = PBXGroup;
 			children = (
-				F058219F2DA5A81300E2898E /* MediQuiz */,
 				F05821AE2DA5AD7900E2898E /* Frameworks */,
 				F058219E2DA5A81300E2898E /* Products */,
+				F058219F2DA5A81300E2898E /* MediQuiz */,
 			);
 			sourceTree = "<group>";
 		};

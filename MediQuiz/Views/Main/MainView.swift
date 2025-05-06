@@ -13,8 +13,7 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Main View")
-                .navigationTitle("Main View")
+            HomeView()
                 .navigationDestination(isPresented: $isShowingAccountView) {
                     AccountHost()
                 }
