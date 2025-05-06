@@ -28,7 +28,7 @@ extension Authentication {
     
     // MARK: - Authentication
     /// Sends a verification email to the currently authenticated user.
-    func sendVerificationEmail() async throws {
+    private func sendVerificationEmail() async throws {
         guard let user = Auth.auth().currentUser else {
             throw AuthError.noUserFound
         }
@@ -42,7 +42,7 @@ extension Authentication {
     }
     
     /// Re-authenticates the current user using the provided email and password.
-    func reauthenticateUser(with email: String, password: String) async throws {
+    private func reauthenticateUser(with email: String, password: String) async throws {
         guard let user = Auth.auth().currentUser else {
             throw AuthError.noUserFound
         }
@@ -53,7 +53,7 @@ extension Authentication {
     
     // MARK: - Updating Credentials
     /// Updates the password of the currently authenticated user.
-    func updatePassword(to password: String) async throws {
+    private func updatePassword(to password: String) async throws {
         guard let user = Auth.auth().currentUser else {
             throw AuthError.noUserFound
         }
@@ -67,10 +67,52 @@ extension Authentication {
         }
     }
     
+    func changePassword(from oldPassword: String, to newPassword: String) async throws {
+        guard let email = user?.email else {
+            throw AuthError.noUserFound
+        }
+        
+        try await reauthenticateUser(with: email, password: oldPassword)
+        try await updatePassword(to: newPassword)
+        passwordChangeSuccess = true
+    }
+    
+    func changeUserName(to newUserName: String) throws {
+        guard let id = userData?.id else {
+            throw AuthError.noUserFound
+        }
+        
+        let newUserName = UserData(id: id, name: newUserName)
+        try setUserName(for: newUserName)
+        
+        Task {
+            try await userData = fetchUserData()
+        }
+    }
+    
     // MARK: - Fetching User Data
     func fetchUserData() async throws -> UserData? {
         guard let user = user else { throw AuthError.noUserFound }
         return try await DatabaseController()
             .getDocument(user.uid, within: "user_data")
+    }
+    
+    func setUserName(for user: UserData) throws {
+        try DatabaseController().set(user, in: user.id, within: "user_data")
+    }
+    
+    // MARK: - Register
+    func register(account: Account) async throws {
+        try await signUp(with: newAccount.email, password: newAccount.password)
+        
+        if let user = Auth.auth().currentUser {
+            try setUserName(for: .init(id: user.uid, name: account.name))
+        }
+        
+        try await signIn(with: newAccount.email, password: newAccount.password)
+        try await sendVerificationEmail()
+        
+        newAccount.clear()
+        signUpSuccess = true
     }
 }

@@ -14,7 +14,15 @@ final class Authentication {
     var user: User?
     var userData: UserData?
     
+    var newAccount = Account()
+    var signUpSuccess = false
+    var passwordChangeSuccess = false
+    
     private var handle: AuthStateDidChangeListenerHandle?
+    
+    var isSignIn: Bool {
+        user != nil
+    }
     
     init() {
         handle = Auth.auth().addStateDidChangeListener { auth, user in
