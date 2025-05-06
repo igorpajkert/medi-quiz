@@ -37,36 +37,37 @@ struct PasswordChangeView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                Spacer(minLength: 100)
-                VStack(spacing: 16) {
-                    SampleImage(image: .password)
-                    headline
-                    SecureFieldPrimary(
-                        label: "field.oldPassword",
-                        text: $oldPassword
-                    )
-                    SecureFieldPrimary(
-                        label: "field.newPassword",
-                        text: $newPassword
-                    )
-                    SecureFieldPrimary(
-                        label: "field.newPasswordConfirmation",
-                        text: $newPasswordConfirmation
-                    )
-                    .foregroundStyle(isPasswordMatch ? fieldStyle : .red)
-                    buttonChangePassword
-                }
-                .padding()
-                .onChange(of: auth.passwordChangeSuccess) { old, new in
-                    if new {
-                        dismiss()
-                    }
+        ScrollView {
+            Spacer(minLength: 100)
+            VStack(spacing: 16) {
+                SampleImage(image: .password)
+                headline
+                SecureFieldPrimary(
+                    label: "field.oldPassword",
+                    text: $oldPassword
+                )
+                SecureFieldPrimary(
+                    label: "field.newPassword",
+                    text: $newPassword
+                )
+                SecureFieldPrimary(
+                    label: "field.newPasswordConfirmation",
+                    text: $newPasswordConfirmation
+                )
+                .foregroundStyle(isPasswordMatch ? fieldStyle : .red)
+                buttonChangePassword
+            }
+            .padding()
+            .sheet(item: $errorWrapper) { wrapper in
+                ErrorSheet(wrapper: wrapper)
+            }
+            .onChange(of: auth.passwordChangeSuccess) { old, new in
+                if new {
+                    dismiss()
                 }
             }
-            .scrollIndicators(.never)
         }
+        .scrollIndicators(.never)
     }
     
     private var headline: some View {
@@ -103,5 +104,7 @@ struct PasswordChangeView: View {
 }
 
 #Preview {
-    PasswordChangeView()
+    NavigationStack {
+        PasswordChangeView()
+    }
 }

@@ -497,8 +497,40 @@
         }
       }
     },
-    "Main View" : {
+    "Main Mode" : {
 
+    },
+    "name.mainMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Główny"
+          }
+        }
+      }
+    },
+    "name.swipeMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Swipe"
+          }
+        }
+      }
     },
     "section.changePassword" : {
       "localizations" : {
@@ -596,22 +628,8 @@
         }
       }
     },
-    "tab.account" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Account"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konto"
-          }
-        }
-      }
+    "Swipe Mode" : {
+
     },
     "text.accountSupport" : {
       "localizations" : {
@@ -820,6 +838,17 @@
           }
         }
       }
+    },
+    "title.home" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "title.passwordReset" : {
       "localizations" : {

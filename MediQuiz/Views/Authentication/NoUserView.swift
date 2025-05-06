@@ -13,7 +13,7 @@ struct NoUserView: View {
     
     var body: some View {
         ZStack {
-            AnimatedMeshGradient()
+            BorderMeshGradient()
             ScrollView {
                 VStack {
                     Spacer(minLength: 100)
