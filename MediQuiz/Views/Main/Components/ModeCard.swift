@@ -11,35 +11,46 @@ struct ModeCard: View {
     
     @Environment(\.colorScheme) private var scheme
     
-    let name: String
-    let image: Image
-    
-    private var background: AnyGradient {
-        scheme == .dark ? Color.black.gradient : Color.white.gradient
-    }
+    let mode: Mode
     
     var body: some View {
         VStack(alignment: .leading) {
-            
             image
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 32))
-            
-            Text(name)
-                .font(.title)
-                .padding()
+            name
+            summary
         }
-        .padding(10)
+        .padding(20)
         .background {
-            RoundedRectangle(cornerRadius: 42)
-                .foregroundStyle(background)
+            RoundedRectangle(cornerRadius: 52)
+                .foregroundStyle(.white.gradient.secondary)
         }
-        .padding()
         .containerRelativeFrame(.horizontal)
+    }
+    
+    private var image: some View {
+        mode.image
+            .resizable()
+            .scaledToFit()
+            .clipShape(RoundedRectangle(cornerRadius: 32))
+            .shadow(radius: 4)
+    }
+    
+    private var name: some View {
+        Text(mode.name)
+            .font(.title)
+            .bold()
+            .padding(.top)
+            .padding(.horizontal)
+    }
+    
+    private var summary: some View {
+        Text(mode.summary)
+            .font(.footnote)
+            .lineLimit(3, reservesSpace: true)
+            .padding(.horizontal)
     }
 }
 
 #Preview {
-    ModeCard(name: "Main Mode", image: .init(.account))
+    ModeCard(mode: .main)
 }

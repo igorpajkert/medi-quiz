@@ -14,24 +14,28 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             PrimaryMeshGradient()
-            ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(Mode.allCases) { mode in
-                        ModeCard(name: mode.name, image: mode.image)
-                            .onTapGesture {
-                                selectedMode = mode
-                            }
+            ScrollView {
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        ForEach(Mode.allCases) { mode in
+                            ModeCard(mode: mode)
+                                .onTapGesture {
+                                    selectedMode = mode
+                                }
+                        }
                     }
+                    .scrollTargetLayout()
                 }
-                .scrollTargetLayout()
+                .scrollTargetBehavior(.viewAligned)
+                .contentMargins(30, for: .scrollContent)
+                .scrollIndicators(.never)
+                .navigationDestination(item: $selectedMode) { mode in
+                    ModeHost(mode: mode)
+                }
             }
             .navigationTitle("title.home")
             .navigationBarTitleDisplayMode(.large)
-            .scrollTargetBehavior(.viewAligned)
-            .scrollIndicators(.never)
-            .navigationDestination(item: $selectedMode) { mode in
-                ModeHost(mode: mode)
-            }
+            .toolbarBackgroundVisibility(.hidden, for: .navigationBar)
         }
     }
 }

@@ -273,6 +273,22 @@
         }
       }
     },
+    "Calculations Mode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculations Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Obliczenia"
+          }
+        }
+      }
+    },
     "error.authenticationRequired" : {
       "localizations" : {
         "en" : {
@@ -561,6 +577,22 @@
         }
       }
     },
+    "name.calculationsMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculations"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obliczenia"
+          }
+        }
+      }
+    },
     "name.mainMode" : {
       "localizations" : {
         "en" : {
@@ -577,6 +609,22 @@
         }
       }
     },
+    "name.scenariosMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scenarios"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scenariusze"
+          }
+        }
+      }
+    },
     "name.swipeMode" : {
       "localizations" : {
         "en" : {
@@ -589,6 +637,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tryb Swipe"
+          }
+        }
+      }
+    },
+    "Scenarios Mode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scenarios Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Scenariusze"
           }
         }
       }
@@ -689,8 +753,85 @@
         }
       }
     },
+    "summary.calculationsMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perform the calculations and choose the correct answer."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykonaj obliczenia i wybierz poprawną odpowiedź."
+          }
+        }
+      }
+    },
+    "summary.mainMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a category and answer the questions in the form of a classic quiz."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz kategorię i odpowiadaj na pytania w formie klasycznego quizu."
+          }
+        }
+      }
+    },
+    "summary.scenariosMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step into the role of a lifeguard and answer questions within a specific context."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wciel się w ratownika i odpowiadaj na pytania w określonym kontekście."
+          }
+        }
+      }
+    },
+    "summary.swipeMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose true or false in a quick quiz for revision."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz prawdę lub fałsz w szybkim quizie dla powtórki."
+          }
+        }
+      }
+    },
     "Swipe Mode" : {
-      "shouldTranslate" : false
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Swipe"
+          }
+        }
+      }
     },
     "text.accountSupport" : {
       "localizations" : {
@@ -923,9 +1064,14 @@
             "state" : "translated",
             "value" : "Home"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran Główny"
+          }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "title.passwordReset" : {
       "localizations" : {

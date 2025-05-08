@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SwipeModeHost: View {
     var body: some View {
-        Text("Swipe Mode")
+        ContentUnavailableView("Swipe Mode", systemImage: "xmark.octagon")
     }
 }
 
