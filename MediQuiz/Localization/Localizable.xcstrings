@@ -33,6 +33,22 @@
         }
       }
     },
+    "button.buy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kup"
+          }
+        }
+      }
+    },
     "button.cancel" : {
       "localizations" : {
         "en" : {
@@ -241,6 +257,22 @@
         }
       }
     },
+    "button.start" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpocznij"
+          }
+        }
+      }
+    },
     "error.authenticationRequired" : {
       "localizations" : {
         "en" : {
@@ -333,6 +365,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nazwa użytkownika"
+          }
+        }
+      }
+    },
+    "guidance.faildedToFetchData" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to fetch data. Please try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się pobrać danych. Spróbuj ponownie."
           }
         }
       }
@@ -465,6 +513,22 @@
         }
       }
     },
+    "label.locked" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locked"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zablokowane"
+          }
+        }
+      }
+    },
     "label.name" : {
       "localizations" : {
         "en" : {
@@ -496,9 +560,6 @@
           }
         }
       }
-    },
-    "Main Mode" : {
-
     },
     "name.mainMode" : {
       "localizations" : {
@@ -629,7 +690,7 @@
       }
     },
     "Swipe Mode" : {
-
+      "shouldTranslate" : false
     },
     "text.accountSupport" : {
       "localizations" : {
@@ -819,6 +880,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konto"
+          }
+        }
+      }
+    },
+    "title.categoriesView" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categories"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorie"
           }
         }
       }

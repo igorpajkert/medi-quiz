@@ -23,4 +23,5 @@ struct ModeHost: View {
 
 #Preview {
     ModeHost(mode: .main)
+        .environment(\.mainMode, MainMode())
 }

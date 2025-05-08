@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Category: Identifiable, Codable {
+struct Category: Identifiable, Hashable, Codable {
     
     let id: Int
     let title: String
     let subtitle: String?
     let questions: [Int]
-    let isFree: Bool
+    let isFree: Bool?
     
     init(
         id: Int = Int.randomID(),
@@ -43,5 +43,13 @@ struct Category: Identifiable, Codable {
             questions: questions.map { $0.id },
             isFree: isFree
         )
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case title = "title"
+        case subtitle = "subtitle"
+        case questions = "questionIDs"
+        case isFree = "isFree"
     }
 }
