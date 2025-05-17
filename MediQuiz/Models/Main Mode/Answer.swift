@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Answer: Identifiable, Codable {
+struct Answer: Identifiable, Hashable, Codable {
     
     let id: Int
     let text: String
@@ -21,5 +21,11 @@ struct Answer: Identifiable, Codable {
         self.id = id
         self.text = text
         self.isCorrect = isCorrect
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case text = "answerText"
+        case isCorrect = "isCorrect"
     }
 }

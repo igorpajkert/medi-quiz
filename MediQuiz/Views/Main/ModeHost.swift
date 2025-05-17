@@ -17,10 +17,15 @@ struct ModeHost: View {
             MainModeHost()
         case .swipe:
             SwipeModeHost()
+        case .scenarios:
+            ContentUnavailableView("Scenarios Mode", systemImage: "xmark.octagon")
+        case .calculations:
+            ContentUnavailableView("Calculations Mode", systemImage: "xmark.octagon")
         }
     }
 }
 
 #Preview {
     ModeHost(mode: .main)
+        .environment(\.mainMode, MainMode())
 }

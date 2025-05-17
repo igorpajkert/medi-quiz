@@ -33,6 +33,22 @@
         }
       }
     },
+    "button.buy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kup"
+          }
+        }
+      }
+    },
     "button.cancel" : {
       "localizations" : {
         "en" : {
@@ -125,6 +141,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edytuj"
+          }
+        }
+      }
+    },
+    "button.next" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalej"
           }
         }
       }
@@ -241,6 +273,54 @@
         }
       }
     },
+    "button.start" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozpocznij"
+          }
+        }
+      }
+    },
+    "button.submit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatwierdź"
+          }
+        }
+      }
+    },
+    "Calculations Mode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculations Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Obliczenia"
+          }
+        }
+      }
+    },
     "error.authenticationRequired" : {
       "localizations" : {
         "en" : {
@@ -333,6 +413,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nazwa użytkownika"
+          }
+        }
+      }
+    },
+    "guidance.faildedToFetchData" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to fetch data. Please try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się pobrać danych. Spróbuj ponownie."
           }
         }
       }
@@ -465,6 +561,22 @@
         }
       }
     },
+    "label.locked" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locked"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zablokowane"
+          }
+        }
+      }
+    },
     "label.name" : {
       "localizations" : {
         "en" : {
@@ -497,8 +609,21 @@
         }
       }
     },
-    "Main Mode" : {
-
+    "name.calculationsMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculations"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obliczenia"
+          }
+        }
+      }
     },
     "name.mainMode" : {
       "localizations" : {
@@ -516,6 +641,22 @@
         }
       }
     },
+    "name.scenariosMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scenarios"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scenariusze"
+          }
+        }
+      }
+    },
     "name.swipeMode" : {
       "localizations" : {
         "en" : {
@@ -528,6 +669,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tryb Swipe"
+          }
+        }
+      }
+    },
+    "Scenarios Mode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scenarios Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Scenariusze"
           }
         }
       }
@@ -628,8 +785,85 @@
         }
       }
     },
+    "summary.calculationsMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perform the calculations and choose the correct answer."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykonaj obliczenia i wybierz poprawną odpowiedź."
+          }
+        }
+      }
+    },
+    "summary.mainMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a category and answer the questions in the form of a classic quiz."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz kategorię i odpowiadaj na pytania w formie klasycznego quizu."
+          }
+        }
+      }
+    },
+    "summary.scenariosMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step into the role of a lifeguard and answer questions within a specific context."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wciel się w ratownika i odpowiadaj na pytania w określonym kontekście."
+          }
+        }
+      }
+    },
+    "summary.swipeMode" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose true or false in a quick quiz for revision."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz prawdę lub fałsz w szybkim quizie dla powtórki."
+          }
+        }
+      }
+    },
     "Swipe Mode" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe Mode"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tryb Swipe"
+          }
+        }
+      }
     },
     "text.accountSupport" : {
       "localizations" : {
@@ -663,6 +897,22 @@
         }
       }
     },
+    "text.correctAsnwers" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correct answers:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poprawne odpowiedzi:"
+          }
+        }
+      }
+    },
     "text.deleteAccountWarning" : {
       "localizations" : {
         "en" : {
@@ -691,6 +941,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jeśli masz problem z aplikacją lub chcesz zgłosić błąd wyślij wiadomość email na adres: support@ipsoftware.org"
+          }
+        }
+      }
+    },
+    "text.feedback.correct" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correct"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poprawnie"
+          }
+        }
+      }
+    },
+    "text.feedback.incorrect" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incorrect"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niepoprawnie"
           }
         }
       }
@@ -823,6 +1105,22 @@
         }
       }
     },
+    "title.categoriesView" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categories"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorie"
+          }
+        }
+      }
+    },
     "title.editAccount" : {
       "localizations" : {
         "en" : {
@@ -846,9 +1144,14 @@
             "state" : "translated",
             "value" : "Home"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran Główny"
+          }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "title.passwordReset" : {
       "localizations" : {

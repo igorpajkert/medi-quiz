@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Question: Identifiable, Codable {
+struct Question: Identifiable, Hashable, Codable {
     
     let id: Int
     let text: String
@@ -38,5 +38,12 @@ struct Question: Identifiable, Codable {
             answers: answers,
             categories: categories.map { $0.id }
         )
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case text = "questionText"
+        case answers = "answers"
+        case categories = "categoryIDs"
     }
 }
