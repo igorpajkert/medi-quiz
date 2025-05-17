@@ -18,7 +18,8 @@ extension Question {
                 .init(text: "Kidneys", isCorrect: true),
                 .init(text: "Lungs", isCorrect: false),
                 .init(text: "Stomach", isCorrect: false)
-            ]
+            ],
+            categories: [0, 1]
         ),
         // Question 2: Single correct answer
         .init(
@@ -28,7 +29,8 @@ extension Question {
                 .init(text: "37°C", isCorrect: true),
                 .init(text: "38°C", isCorrect: false),
                 .init(text: "35°C", isCorrect: false)
-            ]
+            ],
+            categories: [0]
         ),
         // Question 3: Multiple correct answers
         .init(
@@ -110,4 +112,13 @@ extension Question {
     static func generateSampleData(of count: Int) -> [Question] {
         (0..<count).map { _ in sampleData.randomElement() ?? sampleData[0] }
     }
+    
+    static let sampleQuestion = Question(
+        text: "This is a sample question!",
+        answers: [
+            .init(text: "First sample answer", isCorrect: false),
+            .init(text: "Second sample answer", isCorrect: true),
+            .init(text: "Third sample answer", isCorrect: false)
+        ], categories: [0, 1, 2]
+    )
 }

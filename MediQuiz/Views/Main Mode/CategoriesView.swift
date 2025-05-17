@@ -21,7 +21,10 @@ struct CategoriesView: View {
         }
         .navigationTitle("title.categoriesView")
         .navigationDestination(item: $mainMode.selectedCategory) { category in
-            MainQuizView(category: category)
+            MainQuizView(
+                categoryId: category.id,
+                categoryTitle: category.title
+            )
         }
     }
 }

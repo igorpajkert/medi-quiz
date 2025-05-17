@@ -145,6 +145,22 @@
         }
       }
     },
+    "button.next" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalej"
+          }
+        }
+      }
+    },
     "button.passwordReset" : {
       "localizations" : {
         "en" : {
@@ -269,6 +285,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rozpocznij"
+          }
+        }
+      }
+    },
+    "button.submit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatwierdź"
           }
         }
       }
@@ -865,6 +897,22 @@
         }
       }
     },
+    "text.correctAsnwers" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correct answers:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poprawne odpowiedzi:"
+          }
+        }
+      }
+    },
     "text.deleteAccountWarning" : {
       "localizations" : {
         "en" : {
@@ -893,6 +941,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jeśli masz problem z aplikacją lub chcesz zgłosić błąd wyślij wiadomość email na adres: support@ipsoftware.org"
+          }
+        }
+      }
+    },
+    "text.feedback.correct" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correct"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poprawnie"
+          }
+        }
+      }
+    },
+    "text.feedback.incorrect" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incorrect"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niepoprawnie"
           }
         }
       }
