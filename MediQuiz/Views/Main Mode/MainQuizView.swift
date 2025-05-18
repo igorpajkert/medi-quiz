@@ -10,6 +10,7 @@ import SwiftUI
 struct MainQuizView: View {
     
     @Environment(\.mainMode) private var mainMode
+    @Environment(\.dismiss) private var dismiss
     
     var categoryId: Int
     var categoryTitle: String
@@ -36,7 +37,15 @@ struct MainQuizView: View {
         }
         .navigationTitle(categoryTitle)
         .task {
-            mainMode.prepareQuizQuestions(for: categoryId)
+            mainMode.setupQuiz(for: categoryId)
+        }
+        .overlay {
+            if mainMode.isQuizFinished {
+                EndQuizView(
+                    onBack: { dismiss() },
+                    onRestart: { mainMode.setupQuiz(for: categoryId) }
+                )
+            }
         }
     }
     

@@ -23,7 +23,7 @@ class MainMode {
     var isCorrectlyAnswered = false
     var selectedAnswers = [Answer]()
     var correctAnswers = [Answer]()
-    var correctAnswerCount = 0
+    var correctAnswersCount = 0
     
     private var isFetched = false
     
@@ -37,6 +37,7 @@ class MainMode {
         self.questions = questions
     }
     
+    // MARK: Setup
     func fetchData() async throws {
         guard !isFetched else { return }
         
@@ -45,19 +46,34 @@ class MainMode {
         questions = try await db.getAllDocuments(from: Constants.questions)
     }
     
-    func prepareQuizQuestions(for category: Int) {
+    func setupQuiz(for category: Int) {
         quizQuestions = questions.filter { $0.categories.contains(category) }.shuffled()
-        resetQuiz()
+        
+        currentQuestionIndex = 0
+        correctAnswersCount = 0
+        isQuizFinished = false
+        isSubmitted = false
+        setupAnswers()
     }
     
+    private func setupAnswers() {
+        correctAnswers = currentQuestion.answers.filter { $0.isCorrect }
+        selectedAnswers.removeAll()
+        isCorrectlyAnswered = false
+        isAnswered = false
+    }
+    
+    // MARK: Intents
     func nextQuestion() {
         currentQuestionIndex += 1
         
         if currentQuestionIndex == quizQuestions.indices.endIndex {
-            isQuizFinished = true
+            withAnimation(.easeOut) {
+                isQuizFinished = true
+            }
         }
         
-        prepareAnswers()
+        setupAnswers()
         
         withAnimation(.easeOut) {
             isSubmitted = false
@@ -67,6 +83,10 @@ class MainMode {
     func submit() {
         isCorrectlyAnswered = correctAnswers.contains(selectedAnswers)
         
+        if isCorrectlyAnswered {
+            correctAnswersCount += 1
+        }
+        
         withAnimation(.bouncy) {
             isSubmitted = true
         }
@@ -75,28 +95,13 @@ class MainMode {
     func selectAnswer(_ answer: Answer) {
         selectedAnswers.append(answer)
         
-        if selectedAnswers.count == correctAnswerCount {
+        if selectedAnswers.count == correctAnswers.count {
             isAnswered = true
         }
     }
     
     func isSelected(_ answer: Answer) -> Bool {
         selectedAnswers.contains(answer)
-    }
-    
-    private func resetQuiz() {
-        currentQuestionIndex = 0
-        isQuizFinished = false
-        prepareAnswers()
-        isSubmitted = false
-    }
-    
-    private func prepareAnswers() {
-        isAnswered = false
-        correctAnswers = currentQuestion.answers.filter { $0.isCorrect }
-        correctAnswerCount = correctAnswers.count
-        selectedAnswers.removeAll()
-        isCorrectlyAnswered = false
     }
     
     private struct Constants {
