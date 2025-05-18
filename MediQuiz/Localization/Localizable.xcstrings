@@ -673,6 +673,22 @@
         }
       }
     },
+    "Quiz is over!" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quiz is over!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quiz dobiegł końca!"
+          }
+        }
+      }
+    },
     "Scenarios Mode" : {
       "localizations" : {
         "en" : {
@@ -881,6 +897,22 @@
         }
       }
     },
+    "text.back" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wróć"
+          }
+        }
+      }
+    },
     "text.changePasswordWarning" : {
       "localizations" : {
         "en" : {
@@ -898,6 +930,22 @@
       }
     },
     "text.correctAsnwers" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correct answers:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poprawne odpowiedzi:"
+          }
+        }
+      }
+    },
+    "text.correctlyAnswered" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1021,6 +1069,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wyślij prośbę o zmianę hasła na email:"
+          }
+        }
+      }
+    },
+    "text.restart" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restart"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powtórz"
           }
         }
       }
