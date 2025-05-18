@@ -68,6 +68,7 @@ class MainMode {
         currentQuestionIndex += 1
         
         if currentQuestionIndex == quizQuestions.indices.endIndex {
+
             withAnimation(.easeOut) {
                 isQuizFinished = true
             }
@@ -86,7 +87,7 @@ class MainMode {
         if isCorrectlyAnswered {
             correctAnswersCount += 1
         }
-        
+
         withAnimation(.bouncy) {
             isSubmitted = true
         }
